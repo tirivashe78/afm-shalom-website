@@ -9,7 +9,7 @@ export default function Hero() {
 return (
 <section className="relative">
 <div className="absolute inset-0 -z-10">
-<Image src="/images/hero2.jpg" alt="AFM Shalom Center building exterior" fill style={{ objectFit: 'cover' }} priority />
+<Image src="/images/gallery4.jpg" alt="AFM Shalom Center building exterior" fill style={{ objectFit: 'cover' }} priority />
 <div className="absolute inset-0 bg-black/45" />
 </div>
 
