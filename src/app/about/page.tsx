@@ -8,7 +8,7 @@ import { FaPrayingHands, FaGlobe, FaHeart, FaCross, FaPaw, FaMapMarkerAlt, FaExt
 // Leadership data
 const leadership = [
   { name: 'Pastor Nhiwatiwa', position: 'Pastor', image: '/images/pastor.jpg' },
-  { name: 'Baba Zizhou', position: 'Chairperson', image: '/images/chairperson.jpg' },
+  { name: 'Baba Zizhou', position: 'Deputy Chairperson', image: '/images/chairperson.jpg' },
 ];
 
 const visionPoints = [

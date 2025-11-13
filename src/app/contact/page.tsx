@@ -51,7 +51,7 @@ export default function ContactPage() {
           </p>
           <div className="flex flex-col gap-2">
             <a
-              href="tel:+263770000001"
+              href="tel:+263 77 705 1088"
               className="flex items-center gap-2 text-primary hover:underline"
             >
               <Phone className="w-5 h-5" /> +263 77 705 1088
@@ -117,7 +117,7 @@ export default function ContactPage() {
         className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 mb-12 justify-center"
       >
         <a
-          href="https://wa.me/+263777057088?text=Hello%2C%20I%20want%20to%20join%20the%20AFM%20Shalom%20WhatsApp%20group"
+          href="https://wa.me/+263777051088?text=Hello%2C%20I%20want%20to%20join%20the%20AFM%20Shalom%20WhatsApp%20group"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center gap-2 bg-green-500 text-white py-3 px-6 rounded-full hover:bg-green-600 transition"
