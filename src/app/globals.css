@@ -1,26 +1,34 @@
-@import "tailwindcss";
+/* src/app/globals.css (no @apply) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* CSS variables for brand colors */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary:#1c7ed4;
+  --color-accent: #f59e0b;
+  --gradient-whitish-blue: linear-gradient(130deg, #1c7ed4, hsl(214, 92%, 41%)); /* light blueish gradient */
+}
+/* small helper classes that don't rely on Tailwind @apply */
+.bg-primary { background-color: var(--color-primary); }
+.text-primary { color: var(--color-primary); }
+.bg-gradient-whitish-blue {
+  background: var(--gradient-whitish-blue);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+/* optional small helpers for consistent focus outlines (pure CSS) */
+.focus-ring:focus {
+  outline: 3px solid rgba(15,118,110,0.12);
+  outline-offset: 2px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* keep global smoothing but not Tailwind @apply */
+html, body, #__next {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

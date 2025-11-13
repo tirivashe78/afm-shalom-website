@@ -1,65 +1,120 @@
-import Image from "next/image";
+'use client';
+
+import { useState } from 'react';
+import Hero from '@/components/Hero';
+import Container from '@/components/Container';
+import Image from 'next/image';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const galleryImages = [
+  '/images/gallery1.jpg',
+  '/images/gallery2.jpg',
+  '/images/gallery3.jpg',
+  '/images/gallery4.jpg',
+  '/images/gallery5.jpg',
+  '/images/gallery6.jpg',
+];
 
 export default function Home() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <>
+      <Hero />
+
+      <Container>
+        {/* Mission Section with fade-in animation */}
+        <section className="mt-12 mb-20">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-2xl font-semibold text-slate-900"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            Our Mission
+          </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.3 }}
+            className="mt-4 text-lg text-slate-700 max-w-3xl"
           >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            We are a Christ-centered, Spirit-led, Bible-believing church rooted in the rich legacy of the Apostolic Faith Mission in Zimbabwe. At Shalom Center, we are committed to building lives, transforming communities and expanding God’s Kingdom through worship, discipleship and service.
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1, delay: 0.6 }}
+            className="mt-6 text-base text-slate-700"
+          >
+            Join us this Sunday and experience the power and presence of God in a dynamic, family-oriented environment.
+          </motion.p>
+        </section>
+
+        {/* Gallery Section with hover & fade-in animation */}
+        <section className="mb-24">
+          <h3 className="text-xl font-medium mb-4">Gallery Preview</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {galleryImages.map((src, idx) => (
+              <motion.div
+                key={idx}
+                className="relative h-40 rounded-lg shadow-lg overflow-hidden cursor-pointer"
+                onClick={() => setSelectedImage(src)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+              >
+                <Image
+                  src={src}
+                  alt={`Gallery image ${idx + 1}`}
+                  fill
+                  className="object-cover"
+                  priority={idx < 3}
+                />
+              </motion.div>
+            ))}
+          </div>
+        </section>
+      </Container>
+
+      {/* Lightbox Modal with animation */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+          >
+            <motion.div
+              className="relative max-w-4xl max-h-[90vh]"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.8 }}
+              onClick={(e) => e.stopPropagation()} // prevent closing when clicking image
+            >
+              <Image
+                src={selectedImage}
+                alt="Selected image"
+                width={1200}
+                height={800}
+                className="rounded-lg object-contain"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-2 right-2 text-white text-3xl font-bold"
+              >
+                &times;
+              </button>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 }
