@@ -42,7 +42,7 @@ return (
 
 <div className="mt-6 flex gap-3">
 <a href="/notices" className="inline-flex items-center px-5 py-3 bg-blue-600 text-white rounded-lg shadow hover:scale-105 transform-gpu transition">Join us this Sunday</a>
-<a href="/get-connected" className="inline-flex items-center px-5 py-3 border border-white/30 rounded-lg text-white/90 hover:bg-white/5">Get Connected</a>
+<a href="/contact" className="inline-flex items-center px-5 py-3 border border-white/30 rounded-lg text-white/90 hover:bg-white/5">Get Connected</a>
 </div>
 </motion.div>
 </div>
