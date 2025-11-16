@@ -23,7 +23,7 @@ export default function ContactPage() {
           We’re here to pray, serve, and connect — reach out to us.
         </p>
         <p className="text-gray-500 mt-1">
-          For pastoral care, membership enquiries, or ministry requests.
+          For pastoral care, membership enquiries or ministry requests.
         </p>
       </motion.div>
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
             </div>
           </div>
           <p className="text-gray-700 mb-4">
-            Available for pastoral care, counseling, and prayer requests.
+            Available for pastoral care, counseling and prayer requests.
           </p>
           <div className="flex flex-col gap-2">
             <a
@@ -151,7 +151,7 @@ export default function ContactPage() {
         </h2>
         <p className="text-gray-700 mb-2">AFM Shalom Center — Harare, Zimbabwe</p>
         <a
-          href="https://maps.google.com"
+          href="https://www.google.com/maps/place/AFM+Westlea+Shalom+Centre,+Harare/@-17.8197304,30.9727392,17z"
           target="_blank"
           rel="noopener noreferrer"
           className="text-yellow-500 hover:underline flex items-center gap-1 mb-2"

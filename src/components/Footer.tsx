@@ -20,7 +20,7 @@ return (
 <ul className="mt-3 space-y-2 text-sm">
 <li><Link href="/about">About Us</Link></li>
 <li><Link href="/departments">Departments</Link></li>
-<li><Link href="/gallery">Gallery</Link></li>
+<li><Link href="/">Gallery</Link></li>
 <li><Link href="/contact">Contact</Link></li>
 </ul>
 </div>

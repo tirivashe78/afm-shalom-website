@@ -21,7 +21,7 @@ const visionPoints = [
 ];
 
 export default function AboutPage() {
-  const bishopLink = 'https://example.com/bishop-ad-madawo';
+  const bishopLink = 'https://zimgospelmasters.co.zw/westlea-shalom-center-officially-opened/?srsltid=AfmBOopEAGlyXE18tIIQa6yxGB70wbI5RMeIqgjnqPZHa5KtkCovNYfy';
   const mapsLink = 'https://www.google.com/maps/place/AFM+Westlea+Shalom+Centre,+Harare/@-17.8197304,30.9727392,17z';
 
   return (
@@ -42,7 +42,7 @@ export default function AboutPage() {
             About AFM Shalom Center
           </h1>
           <p className="text-lg text-amber-100/90 max-w-3xl mx-auto">
-            Established for growth, expansion, and increase — a community rooted in Holy Spirit power, fellowship, and compassionate service.
+            Established for growth, expansion, and increase — a community rooted in Holy Spirit power, fellowship and compassionate service.
           </p>
 
           {/* History */}
