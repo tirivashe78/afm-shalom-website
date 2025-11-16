@@ -151,7 +151,7 @@ export default function ContactPage() {
         </h2>
         <p className="text-gray-700 mb-2">AFM Shalom Center — Harare, Zimbabwe</p>
         <a
-          href="https://www.google.com/maps/place/AFM+Westlea+Shalom+Centre,+Harare/@-17.8197304,30.9727392,17z"
+          href="https://maps.app.goo.gl/b77QoDyRP7JL9aeJ7"
           target="_blank"
           rel="noopener noreferrer"
           className="text-yellow-500 hover:underline flex items-center gap-1 mb-2"

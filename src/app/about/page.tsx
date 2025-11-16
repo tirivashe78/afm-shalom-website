@@ -22,7 +22,7 @@ const visionPoints = [
 
 export default function AboutPage() {
   const bishopLink = 'https://zimgospelmasters.co.zw/westlea-shalom-center-officially-opened/?srsltid=AfmBOopEAGlyXE18tIIQa6yxGB70wbI5RMeIqgjnqPZHa5KtkCovNYfy';
-  const mapsLink = 'https://www.google.com/maps/place/AFM+Westlea+Shalom+Centre,+Harare/@-17.8197304,30.9727392,17z';
+  const mapsLink = 'https://maps.app.goo.gl/b77QoDyRP7JL9aeJ7';
 
   return (
     <Container>
