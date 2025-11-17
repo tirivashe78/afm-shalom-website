@@ -10,7 +10,7 @@ export default function DepartmentsPage() {
   };
 
   return (
-    <main className="bg-gray-50 min-h-screen py-16 px-6">
+    <main className="bg-gray-100 min-h-screen py-16 px-6">
       <motion.div
         initial="hidden"
         animate="visible"

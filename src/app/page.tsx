@@ -1,19 +1,33 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import Hero from '@/components/Hero';
-import Container from '@/components/Container';
-import Image from 'next/image';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from "react";
+import Hero from "@/components/Hero";
+import Container from "@/components/Container";
+import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
+// import { Users, Heart, Sparkles, HelpingHand } from "lucide-react";
+import {
+  FaPrayingHands,
+  FaGlobe,
+  FaHeart,
+  FaCross,
+  FaPaw,
+  FaMapMarkerAlt,
+  FaExternalLinkAlt,
+} from "react-icons/fa";
 
 const galleryImages = [
-  '/images/gallery1.jpg',
-  '/images/gallery2.jpg',
-  '/images/gallery3.jpg',
-  '/images/gallery4.jpg',
-  '/images/gallery5.jpg',
-  '/images/gallery6.jpg',
+  "/images/gallery1.jpg",
+  "/images/gallery2.jpg",
+  "/images/gallery3.jpg",
+  "/images/gallery4.jpg",
+  "/images/gallery5.jpg",
+  "/images/gallery6.jpg",
 ];
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+};
 
 export default function Home() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -25,7 +39,7 @@ export default function Home() {
       <Container>
         {/* Mission Section with fade-in animation */}
         <section className="mt-12 mb-20">
-          <motion.h2
+          {/* <motion.h2
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -41,16 +55,53 @@ export default function Home() {
             className="mt-4 text-lg text-slate-700 max-w-3xl"
           >
             We are a Christ-centered, Spirit-led, Bible-believing church rooted in the rich legacy of the Apostolic Faith Mission in Zimbabwe. At Shalom Center, we are committed to building lives, transforming communities and expanding God’s Kingdom through worship, discipleship and service.
-          </motion.p>
+          </motion.p> */}
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.6 }}
-            className="mt-6 text-base text-slate-700"
+          <motion.section
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            className="bg-white p-8 rounded-2xl shadow-md border-l-4 border-primary"
           >
-            Join us this Sunday and experience the power and presence of God in a dynamic, family-oriented environment.
-          </motion.p>
+            <div className="flex items-center gap-3 mb-4">
+              <FaPrayingHands className="text-primary w-8 h-8" />
+              <h2 className="text-2xl font-semibold text-gray-800">
+                Our Mission
+              </h2>
+            </div>
+            <p className="text-gray-700 mb-4">
+              We are a Christ-centered, Spirit-led, Bible-believing church
+              rooted in the rich legacy of the Apostolic Faith Mission in
+              Zimbabwe. At Shalom Center, we are committed to building lives,
+              transforming communities and expanding God’s Kingdom through
+              worship, discipleship and service.
+            </p>
+            <blockquote className="text-sm italic text-gray-600 border-l-4 pl-4 border-accent">
+              Join us this Sunday and experience the power and presence of God
+              in a dynamic, family-oriented environment.
+            </blockquote>
+          </motion.section>
+          <br />
+
+          <section className="mb-24 flex justify-center">
+            <motion.div
+              className="relative rounded-xl shadow-lg overflow-hidden cursor-pointer"
+              onClick={() => setSelectedImage("/images/service.jpg")}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+            >
+              <Image
+                src="/images/service.jpg"
+                alt="Service Image"
+                width={500} // Adjust size here
+                height={50}
+                className="object-contain mx-auto"
+              />
+            </motion.div>
+          </section>
         </section>
 
         {/* Gallery Section with hover & fade-in animation */}

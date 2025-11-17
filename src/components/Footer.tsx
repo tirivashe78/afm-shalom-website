@@ -12,6 +12,7 @@ return (
 <h4 className="font-semibold">AFM Shalom Center</h4>
 <p className="text-sm text-slate-600 mt-2">We are a Christ-centered, Spirit-led, Bible-believing church.</p>
 <p className="text-sm text-slate-500 mt-3"><br/>Phone: +263 77 705 1088</p>
+<p className="text-sm text-slate-500 mt-3"><br/>Location: 6424, Westlea, Harare | Next to Westlea Gardens</p>
 </div>
 
 

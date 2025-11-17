@@ -149,7 +149,7 @@ export default function ContactPage() {
         <h2 className="text-2xl font-semibold text-gray-800 mb-4 flex items-center gap-2">
           <MapPin className="w-5 h-5 text-yellow-500" /> Location & Hours
         </h2>
-        <p className="text-gray-700 mb-2">AFM Shalom Center — Harare, Zimbabwe</p>
+        <p className="text-gray-700 mb-2">AFM Shalom Center — 6424, Westlea, Harare | Next to Westlea Gardens</p>
         <a
           href="https://maps.app.goo.gl/b77QoDyRP7JL9aeJ7"
           target="_blank"
