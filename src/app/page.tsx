@@ -14,6 +14,7 @@ import {
   FaPaw,
   FaMapMarkerAlt,
   FaExternalLinkAlt,
+  FaDownload,
 } from "react-icons/fa";
 
 const galleryImages = [
@@ -163,9 +164,26 @@ export default function Home() {
                 &times;
               </button>
             </motion.div>
+            
           </motion.div>
         )}
       </AnimatePresence>
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="max-w-4xl mx-auto flex flex-col sm:flex-row gap-4 mb-12 justify-center"
+            >
+            <a
+                href="https://play.google.com/store/apps/details?id=io.tatenda.afm"
+                className="flex items-center justify-center gap-2 bg-blue-500 text-white py-3 px-6 rounded-full hover:bg-blue-600 transition"
+              >
+                <FaDownload className="w-5 h-5" /> Download our Hymn Book
+              </a>
+              </motion.div>
+            
     </>
+    
   );
 }

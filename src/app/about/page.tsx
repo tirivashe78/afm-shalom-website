@@ -79,7 +79,7 @@ export default function AboutPage() {
         transition={{ duration: 0.8 }}
       >
         <h2 className="text-3xl font-semibold text-slate-900 mb-4 flex items-center gap-2">
-          <FaPrayingHands className="text-2xl text-yellow-600" /> Our Mission
+          <FaPrayingHands className="text-2xl text-blue-600" /> Our Mission
         </h2>
         <p className="text-lg text-slate-700 max-w-3xl">
           Filled with Holy Spirit, we evangelize, heal the sick and prepare our members for our Lord Jesus Christ’s second coming.
@@ -107,7 +107,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.15 }}
             >
-              <FaCross className="mt-1 text-green-600" />
+              <FaCross className="mt-1 text-blue-600" />
               <span>{point}</span>
             </motion.li>
           ))}
@@ -118,7 +118,7 @@ export default function AboutPage() {
       <motion.section className="mt-16 mb-20 grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
         <div className="lg:col-span-2">
           <h2 className="text-3xl font-semibold text-slate-900 mb-6 flex items-center gap-2">
-            <FaHeart className="text-2xl text-red-600" /> Our Leadership
+            <FaHeart className="text-2xl text-blue-600" /> Our Leadership
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
