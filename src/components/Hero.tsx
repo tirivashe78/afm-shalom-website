@@ -59,7 +59,7 @@ export default function Hero() {
       </div>
 
       {/* Manual arrows */}
-      <button
+      {/* <button
         onClick={handlePrev}
         className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white backdrop-blur-md"
       >
@@ -71,7 +71,7 @@ export default function Hero() {
         className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white backdrop-blur-md"
       >
         <ChevronRight size={24} />
-      </button>
+      </button> */}
 
       <Container>
         <div className="min-h-[60vh] flex items-center">
