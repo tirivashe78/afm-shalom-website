@@ -1,23 +1,77 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
 import AnimatedBadge from "./AnimatedBadge";
 import Container from "./Container";
 import { Typewriter } from "react-simple-typewriter";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // install: npm i lucide-react
 
 export default function Hero() {
+  const images = [
+    "/images/gallery1.jpg",
+    "/images/hero1.jpg",
+    "/images/gallery4.jpg",
+  ];
+
+  const [index, setIndex] = useState(0);
+
+  // Auto-slide every 10 seconds
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 10000);
+
+    return () => clearInterval(timer);
+  }, [images.length]);
+
+  const handleNext = () => {
+    setIndex((prev) => (prev + 1) % images.length);
+  };
+
+  const handlePrev = () => {
+    setIndex((prev) => (prev - 1 + images.length) % images.length);
+  };
+
   return (
-    <section className="relative">
+    <section className="relative overflow-hidden">
+      {/* Background slideshow */}
       <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/gallery4.jpg"
-          alt="AFM Shalom Center building exterior"
-          fill
-          style={{ objectFit: "cover" }}
-          priority
-        />
-        <div className="absolute inset-0 bg-black/45" />
+        <AnimatePresence>
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1.8 }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={images[index]}
+              alt="Hero background slide"
+              fill
+              priority
+              style={{ objectFit: "cover" }}
+            />
+            <div className="absolute inset-0 bg-black/50" />
+          </motion.div>
+        </AnimatePresence>
       </div>
+
+      {/* Manual arrows */}
+      <button
+        onClick={handlePrev}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white backdrop-blur-md"
+      >
+        <ChevronLeft size={24} />
+      </button>
+
+      <button
+        onClick={handleNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 p-3 rounded-full text-white backdrop-blur-md"
+      >
+        <ChevronRight size={24} />
+      </button>
 
       <Container>
         <div className="min-h-[60vh] flex items-center">
@@ -26,9 +80,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-amber-300 text-sm uppercase tracking-wider"></p>
             <h1 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-extrabold text-white leading-tight">
-              {" "}
               <Typewriter
                 words={["Welcome to AFM Shalom Center"]}
                 loop={false}
@@ -39,8 +91,9 @@ export default function Hero() {
                 delaySpeed={60000}
               />
             </h1>
+
             <p className="mt-4 text-lg text-slate-200 max-w-2xl">
-              <span className="font-semibold text-white-600">
+              <span className="font-semibold">
                 Established for growth, expansion and increase.
               </span>
             </p>
