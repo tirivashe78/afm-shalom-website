@@ -28,9 +28,9 @@ export default function Header() {
             />
           </div>
           <div>
-            <div className="font-semibold">AFM Shalom Center</div>
+            <div className="font-semibold">AFM In Zimbabwe </div>
             <div className="text-xs text-slate-500">
-              Established for growth, expansion and increase
+              Westlea Shalom Center
             </div>
           </div>
         </Link>

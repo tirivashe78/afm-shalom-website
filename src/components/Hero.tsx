@@ -94,7 +94,7 @@ export default function Hero() {
 
             <p className="mt-4 text-lg text-slate-200 max-w-2xl">
               <span className="font-semibold">
-                Established for growth, expansion and increase.
+                Being Elavated for Excellence and Impact
               </span>
             </p>
 
